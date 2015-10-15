@@ -8,8 +8,14 @@ class ModMgr {
         this.mapMod = {};
     }
 
-    addMod(name, mod) {
-        this.mapMod[name] = mod;
+    addMod(mod) {
+        if (this.mapMod.hasOwnProperty(mod.modname)) {
+            return false;
+        }
+
+        this.mapMod[mod.modname] = mod;
+
+        return true;
     }
 }
 

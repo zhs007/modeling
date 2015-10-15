@@ -28,16 +28,20 @@ class RequestInfo {
         this.renderparam = renderparams.getDefaultParam(req);
     }
 
-    setModRenderParam(mod) {
-        this.renderparam[mod.name] = mod.renderparam;
+    setModRenderParam(modname, renderparam) {
+        this.renderparam[modname] = renderparam;
     }
 
-    setModSession(mod) {
-        this.session[mod.name] = mod.session;
+    setModSession(modname, session) {
+        this.session[modname] = session;
     }
 
-    render(jadefile) {
+    renderFile(jadefile) {
         this.req.send(jadecache.render2str(jadefile, this.renderparam));
+    }
+
+    renderCache(jadename, str) {
+        this.req.send(jadecache.rendercache2str(jadename, str, this.renderparam));
     }
 }
 
