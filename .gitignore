@@ -27,3 +27,4 @@ build/Release
 node_modules
 .idea
 config.js
+*.zhs007mac
