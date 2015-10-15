@@ -1,0 +1,34 @@
+/**
+ * Created by zhs007 on 15/7/31.
+ */
+
+var util = require('util');
+var fs = require("fs");
+var strPackage = fs.readFileSync('./package.json').toString();
+var pkg = JSON.parse(strPackage);
+
+var timestamp = new Date().getTime();
+
+exports.ver = pkg.version;
+
+exports.appname = 'modeling';
+
+exports.log_path = util.format('./%s.log', timestamp);
+exports.logdev_path = util.format('./%s.dev.log', timestamp);
+
+exports.openLogDev = true;
+
+exports.service_port = 3300;
+
+//
+exports.db_host = '121.41.86.183';
+exports.db_user = 'zhs007';
+exports.db_pwd = 'zhs007';
+exports.db_name = 'slots';
+
+exports.redis_host = '121.41.86.183';
+exports.redis_port = 6379;
+exports.redis_dbindex = 0;
+exports.redis_timeout = 20 * 60;
+
+exports.title = '数据建模工具';

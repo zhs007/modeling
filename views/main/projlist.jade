@@ -1,0 +1,13 @@
+ul.nav.nav-sidebar
+  - for (var key in Mod_Main.mapProj) {
+  - if (key == Mod_Main.curProj) {
+  li.active
+    a(href='javascript:chg2test("#{key}")') #{Mod_Main.mapProj[key].cname}
+  -} else {
+  li
+    a(href='javascript:chg2test("#{key}")') #{Mod_Main.mapProj[key].cname}
+  -}
+  -}
+  li
+  li
+    a(href='javascript:chg2test("")') 新建项目
