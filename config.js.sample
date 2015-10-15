@@ -21,12 +21,12 @@ exports.openLogDev = true;
 exports.service_port = 3300;
 
 //
-exports.db_host = '121.41.86.183';
-exports.db_user = 'zhs007';
-exports.db_pwd = 'zhs007';
-exports.db_name = 'slots';
+exports.db_host = 'db ip';
+exports.db_user = 'db user';
+exports.db_pwd = 'db password';
+exports.db_name = 'db name';
 
-exports.redis_host = '121.41.86.183';
+exports.redis_host = 'redis ip';
 exports.redis_port = 6379;
 exports.redis_dbindex = 0;
 exports.redis_timeout = 20 * 60;
