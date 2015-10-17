@@ -14,10 +14,14 @@ var modUser = require('../mod/user').modUser;
 
 var pageLogin = require('../page/login/index');
 var pageMain = require('../page/main/index');
+var pageHelp = require('../page/help/index');
+var pageSetting = require('../page/setting/index');
 
 function init(app) {
     app.use('/', pageLogin);
     app.use('/main', pageMain);
+    app.use('/help', pageHelp);
+    app.use('/setting', pageSetting);
     //app.use('/help', mod_help);
     //app.use('/setting', mod_setting);
     //app.use('/newproj', mod_newproj);
