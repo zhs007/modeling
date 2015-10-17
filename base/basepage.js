@@ -7,10 +7,12 @@ var mgrMod = require('./modmgr').mgrMod;
 
 class BasePage {
 
-    constructor(jadefile) {
+    constructor(jadefile, pagename) {
         this.jadefile = jadefile;
 
         this.lstMod = [];
+
+        this.pagename = pagename;
 
         //this.jadecache = '';
         //this.renderparam = {};
@@ -45,6 +47,8 @@ class BasePage {
 
     onRoute(req, res) {
         let ri = new RequestInfo(req, res);
+
+        ri.renderparam.curpage = this.pagename;
 
         this.onRequest(ri);
 

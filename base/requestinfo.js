@@ -7,7 +7,7 @@ var renderparams = require('./renderparams');
 
 class RequestInfo {
 
-    constructor(res, req) {
+    constructor(req, res) {
         this.res = res;
         this.req = req;
 
@@ -21,8 +21,8 @@ class RequestInfo {
         }
 
         this.session = {};
-        if (res.session != undefined) {
-            this.session = res.session;
+        if (req.session != undefined) {
+            this.session = req.session;
         }
 
         this.renderparam = renderparams.getDefaultParam(req);
@@ -37,11 +37,11 @@ class RequestInfo {
     }
 
     renderFile(jadefile) {
-        this.req.send(jadecache.render2str(jadefile, this.renderparam));
+        this.res.send(jadecache.render2str(jadefile, this.renderparam));
     }
 
     renderCache(jadename, str) {
-        this.req.send(jadecache.rendercache2str(jadename, str, this.renderparam));
+        this.res.send(jadecache.rendercache2str(jadename, str, this.renderparam));
     }
 }
 

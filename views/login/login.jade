@@ -1,0 +1,16 @@
+extends ../template/basehtml.jade
+
+block bodycontent
+  script(src="js/login.js")
+  link(href="stylesheets/signin.css", rel="stylesheet")
+  div(class="container")
+    br
+      form(class="form-signin", role="form", action="login", method="post")
+        h2(class="form-signin-heading")="请登录..."
+        input(type="text", name="uname", id="uname", class="form-control", placeholder="用户名", required autofocus)
+        input(type="password", name="passwd", id="passwd", class="form-control", placeholder="密码", required)
+        div(class="checkbox")
+          label
+            <input type="checkbox" value="remember-me"> 记住我
+        button(class="btn btn-lg btn-primary btn-block", type="submit", name="loginbtn", id="loginbtn") 登录
+        button(class="btn btn-lg btn-primary btn-block", type="button", onclick="location.href='http://www.mikecrm.com/f.php?t=znxqmO'") 还没有帐号，点我注册

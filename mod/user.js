@@ -5,6 +5,7 @@
 var BaseMod = require('../base/basemod').BaseMod;
 var mgrMod = require('../base/modmgr').mgrMod;
 var ModDef = require('../base/moddef');
+var PageDef = require('../base/pagedef');
 
 class Mod_User extends BaseMod {
 
@@ -19,6 +20,9 @@ class Mod_User extends BaseMod {
 
     onRequest(ri) {
 
+        if (ri.renderparam.curpage == PageDef.PAGE_LOGIN) {
+            ri.res.redirect('/main');
+        }
         //this.renderparam.mapProj = mgrProj.mapProj;
     }
 }

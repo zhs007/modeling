@@ -1,5 +1,5 @@
 /**
- * Created by zhs007 on 15/10/14.
+ * Created by zhs007 on 15/10/16.
  */
 
 var express = require('express');
@@ -8,18 +8,15 @@ var router = express.Router();
 var BasePage = require('../../base/basepage').BasePage;
 var PageDef = require('../../base/pagedef');
 
-class Page_Main extends BasePage {
+class Page_Login extends BasePage {
 
     constructor(jadefile) {
-        super(jadefile, PageDef.PAGE_MAIN);
+        super(jadefile, PageDef.PAGE_LOGIN);
 
-        this.name = Page_Main.name;
+        this.name = Page_Login.name;
 
 
         this.addMod('user');
-        this.addMod('topmenu');
-        this.addMod('leftmenu');
-        this.addMod('workspace');
         //this.onInit();
     }
 
@@ -30,7 +27,7 @@ class Page_Main extends BasePage {
     }
 }
 
-var page = new Page_Main('views/main/index.jade');
+var page = new Page_Login('views/main/index.jade');
 
 router.get('/', function(req, res) {
     page.onRoute(req, res);
