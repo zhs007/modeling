@@ -18,7 +18,7 @@ class Mod_Main_TopMenu extends BaseMod {
     }
 
     onRequest(ri) {
-
+        return false;
         //this.renderparam.mapProj = mgrProj.mapProj;
     }
 }

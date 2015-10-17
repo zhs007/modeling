@@ -22,12 +22,12 @@ class Page_Login extends BasePage {
 
     onRequest(ri) {
 
-        super.onRequest(ri);
+        return super.onRequest(ri);
         //this.renderparam.mapProj = mgrProj.mapProj;
     }
 }
 
-var page = new Page_Login('views/main/index.jade');
+var page = new Page_Login('views/login/index.jade');
 
 router.get('/', function(req, res) {
     page.onRoute(req, res);

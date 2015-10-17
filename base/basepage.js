@@ -40,9 +40,18 @@ class BasePage {
     }
 
     onRequest(ri) {
-        this.lstMod.forEach(function (val, index, arr) {
-            val.onRequest(ri);
-        });
+        for (let i = 0; i < this.lstMod.length; ++i) {
+            if (this.lstMod[i].onRequest(ri)) {
+                return true;
+            }
+        }
+        //this.lstMod.forEach(function (val, index, arr) {
+        //    if (val.onRequest(ri)) {
+        //        return true;
+        //    }
+        //});
+
+        return false;
     }
 
     onRoute(req, res) {
@@ -50,7 +59,9 @@ class BasePage {
 
         ri.renderparam.curpage = this.pagename;
 
-        this.onRequest(ri);
+        if (this.onRequest(ri)) {
+            return ;
+        }
 
         ri.renderFile(this.jadefile);
     }

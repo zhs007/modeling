@@ -20,6 +20,15 @@ class RequestInfo {
             this.params = req.query;
         }
 
+        for (let key in req.params) {
+            this.params[key] = req.params[key];
+        }
+
+        //console.log(JSON.stringify(req.body));
+        //console.log(JSON.stringify(req.query));
+        //console.log(JSON.stringify(req.params));
+        console.log(JSON.stringify(this.params));
+
         this.session = {};
         if (req.session != undefined) {
             this.session = req.session;

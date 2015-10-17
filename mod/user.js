@@ -22,7 +22,11 @@ class Mod_User extends BaseMod {
 
         if (ri.renderparam.curpage == PageDef.PAGE_LOGIN) {
             ri.res.redirect('/main');
+
+            return true;
         }
+
+        return false;
         //this.renderparam.mapProj = mgrProj.mapProj;
     }
 }
