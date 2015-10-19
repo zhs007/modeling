@@ -37,7 +37,7 @@ class ProjMgr {
 
     // 增加项目
     addProj(proj) {
-        if (findProj(proj.projname) != undefined) {
+        if (this.findProj(proj.projname) != undefined) {
             return false;
         }
 

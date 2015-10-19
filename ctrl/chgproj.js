@@ -12,9 +12,9 @@ var mgrProj = require('../base/projmgr').mgrProj;
 var ErrInfo = require('../base/errinfo');
 
 
-// 新建项目
+// 改变项目
 // 跳转页面
-class Ctrl_NewProj extends BaseCtrl {
+class Ctrl_ChgProj extends BaseCtrl {
 
     //--------------------------------------------
     // 属性
@@ -25,28 +25,28 @@ class Ctrl_NewProj extends BaseCtrl {
 
     // 构造函数
     constructor() {
-        super(CtrlDef.CTRL_NEWPROJ);
+        super(CtrlDef.CTRL_CHGPROJ);
     }
 
     onRequest(ri) {
 
-        if (!ri.params.hasOwnProperty('projname') || !ri.params.hasOwnProperty('projcname')) {
+        if (!ri.params.hasOwnProperty('projname')) {
             ri.objRet.errinfo = ErrInfo.ERR_NOPARAM;
 
             return false;
         }
 
-        mgrProj.newProj(ri.params.projname, ri.params.projcname);
-        mgrProj.save('projlist.json');
+        ri.session.modProj.curprojname = ri.params.projname;
+        //ri.renderparam.modProj.curproj = mgrProj.findProj(ri.params.projname);
 
-        ri.objRet.newurl = '/main';
+        ri.objRet.newurl = '/proj';
         //ri.res.redirect('/main');
 
         return false;
     }
 }
 
-var ctrlNewProj = new Ctrl_NewProj();
-mgrCtrl.addCtrl(ctrlNewProj);
+var ctrlChgProj = new Ctrl_ChgProj();
+mgrCtrl.addCtrl(ctrlChgProj);
 
-exports.ctrlNewProj = ctrlNewProj;
+exports.ctrlChgProj = ctrlChgProj;

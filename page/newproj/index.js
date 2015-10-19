@@ -19,9 +19,9 @@ class Page_NewProj extends BasePage {
         this.addMod('user');
         this.addMod('proj');
 
-        this.addMod('topmenu');
-        this.addMod('leftmenu');
-        this.addMod('workspace');
+        //this.addMod('topmenu');
+        //this.addMod('leftmenu');
+        //this.addMod('workspace');
         //this.onInit();
     }
 

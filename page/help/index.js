@@ -17,9 +17,9 @@ class Page_Help extends BasePage {
 
 
         this.addMod('user');
-        this.addMod('topmenu');
-        this.addMod('leftmenu');
-        this.addMod('workspace');
+        //this.addMod('topmenu');
+        //this.addMod('leftmenu');
+        //this.addMod('workspace');
         //this.onInit();
     }
 

@@ -20,6 +20,7 @@ class Page_ProjCtrl extends CtrlPage {
         this.addMod('proj');
 
         this.addCtrl('newproj');
+        this.addCtrl('chgproj');
     }
 
     onRequest(ri) {

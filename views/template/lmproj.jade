@@ -1,11 +1,11 @@
 ul.nav.nav-sidebar
   - for (var proji = 0; proji < modProj.lstproj.length; ++proji) {
-  - if (modProj.curproj != undefined && modProj.lsrproj[proji].projname == modProj.curproj.projname) {
+  - if (modProj.curproj != undefined && modProj.lstproj[proji].projname == modProj.curproj.projname) {
   li.active
-    a(href='javascript:chg2test("")') #{modProj.lsrproj[proji].projcname}
+    a(href='javascript:chgproj("#{modProj.lstproj[proji].projname}")') #{modProj.lstproj[proji].projcname}
   -} else {
   li
-    a(href='javascript:chg2test("")') #{modProj.lsrproj[proji].projcname}
+    a(href='javascript:chgproj("#{modProj.lstproj[proji].projname}")') #{modProj.lstproj[proji].projcname}
   -}
   -}
   li

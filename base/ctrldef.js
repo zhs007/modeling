@@ -3,3 +3,4 @@
  */
 
 exports.CTRL_NEWPROJ = 'newproj';
+exports.CTRL_CHGPROJ = 'chgproj';

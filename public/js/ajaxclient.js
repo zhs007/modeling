@@ -49,3 +49,9 @@ function newproj() {
         onRet(data);
     });
 }
+
+function chgproj(projname) {
+    $.post('/projctrl/chgproj/', {projname: projname}, function (data, status) {
+        onRet(data);
+    });
+}
