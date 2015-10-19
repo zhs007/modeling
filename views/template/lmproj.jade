@@ -9,5 +9,10 @@ ul.nav.nav-sidebar
   -}
   -}
   li
+  - if (curpage == 'newproj') {
+  li.active
+    a(href='/newproj') 新建项目
+  -} else {
   li
-    a(href='javascript:chg2test("")') 新建项目
+    a(href='/newproj') 新建项目
+  -}

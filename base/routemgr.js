@@ -16,6 +16,7 @@ var pageLogin = require('../page/login/index');
 var pageMain = require('../page/main/index');
 var pageHelp = require('../page/help/index');
 var pageSetting = require('../page/setting/index');
+var pageNewProj = require('../page/newproj/index');
 
 // 这个函数将页面路由和app绑定起来
 function init(app) {
@@ -23,6 +24,7 @@ function init(app) {
     app.use('/main', pageMain);
     app.use('/help', pageHelp);
     app.use('/setting', pageSetting);
+    app.use('/newproj', pageNewProj);
 }
 
 exports.init = init;
