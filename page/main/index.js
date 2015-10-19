@@ -38,4 +38,8 @@ router.get('/', function(req, res) {
     page.onRoute(req, res);
 });
 
-module.exports = router;
+function init(app) {
+    app.use('/main', router);
+}
+
+exports.init = init;

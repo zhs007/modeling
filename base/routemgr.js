@@ -24,12 +24,12 @@ var pageProjCtrl = require('../page/projctrl/index');
 
 // 这个函数将页面路由和app绑定起来
 function init(app) {
-    app.use('/', pageLogin);
-    app.use('/main', pageMain);
-    app.use('/help', pageHelp);
-    app.use('/setting', pageSetting);
-    app.use('/newproj', pageNewProj);
-    app.use('/projctrl', pageProjCtrl);
+    pageLogin.init(app);
+    pageMain.init(app);
+    pageHelp.init(app);
+    pageSetting.init(app);
+    pageNewProj.init(app);
+    pageProjCtrl.init(app);
 }
 
 exports.init = init;

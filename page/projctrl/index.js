@@ -33,4 +33,8 @@ router.all('/:ctrl/', function(req, res) {
     page.onRoute(req, res);
 });
 
-module.exports = router;
+function init(app) {
+    app.use('/projctrl', router);
+}
+
+exports.init = init;
