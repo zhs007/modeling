@@ -2,6 +2,8 @@
  * Created by zhs007 on 15/7/31.
  */
 
+// app
+
 var config = require('./config.js');
 
 //var dbmgr = require('./mod/dbmgr');
