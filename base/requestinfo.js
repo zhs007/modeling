@@ -13,6 +13,8 @@ class RequestInfo {
 
         this.params = {};
 
+        this.objRet = undefined;
+
         if (req.method == 'POST') {
             this.params = req.body;
         }
@@ -51,6 +53,10 @@ class RequestInfo {
 
     renderCache(jadename, str) {
         this.res.send(jadecache.rendercache2str(jadename, str, this.renderparam));
+    }
+
+    sendRetObj() {
+        this.res.send(JSON.stringify(this.objRet));
     }
 }
 

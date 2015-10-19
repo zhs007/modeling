@@ -10,6 +10,13 @@ function isArray(o) {
 
 function onRet(str) {
     var obj = JSON.parse(str);
+
+    if (obj.hasOwnProperty('newurl')) {
+        window.location.href = obj.newurl;
+
+        return ;
+    }
+
     if (obj.hasOwnProperty('navsidebar')) {
         $('#navsidebar').html(obj.navsidebar);
     }
@@ -34,25 +41,11 @@ function onRet(str) {
     }
 }
 
-function chg2test(curtest) {
-    $.post('/test/view_start', {curtest: curtest}, function (data, status) {
-        onRet(data);
-    });
-}
+function newproj() {
+    var projname = $("#inputProj").val();
+    var cname = $("#inputCName").val();
 
-function starttest(curtest) {
-    lstChart = {};
-
-    var param = {
-        curtest: curtest,
-        addr: $('#inputServAddr').val(),
-        port: $('#inputServPort').val(),
-        clientnums: $('#inputClientNums').val(),
-        plugins: $("#inputPlugins").find("option:selected").attr("typename"),
-        proto: $("#inputProto").find("option:selected").attr("typename")
-    };
-
-    $.post('/test/ctrl_start', param, function (data, status) {
+    $.post('/projctrl/newproj/', {projname: projname, projcname: cname}, function (data, status) {
         onRet(data);
     });
 }

@@ -83,7 +83,9 @@ class BasePage {
             return ;
         }
 
-        ri.renderFile(this.jadefile);
+        if (this.jadefile != undefined) {
+            ri.renderFile(this.jadefile);
+        }
     }
 }
 

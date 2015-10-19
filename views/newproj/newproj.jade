@@ -1,0 +1,13 @@
+form.form-horizontal(role='form')
+  h3.page-header 新建项目
+  .form-group
+    label.col-sm-3.control-label(for='inputProj') 项目
+    .col-sm-5
+      input#inputProj.form-control(type='text', placeholder='项目', value='')
+  .form-group
+    label.col-sm-3.control-label(for='inputCName') 中文名
+    .col-sm-5
+      input#inputCName.form-control(type='text', placeholder='中文名', value='')
+  .form-group
+    .col-sm-offset-3.col-sm-5
+      button.btn.btn-default(type='button', onclick='newproj()') 新建项目
