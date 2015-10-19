@@ -1,11 +1,11 @@
 ul.nav.nav-sidebar
-  - for (var key in Mod_Main.mapProj) {
-  - if (key == Mod_Main.curProj) {
+  - for (var proji = 0; proji < modProj.lstproj.length; ++proji) {
+  - if (modProj.curproj != undefined && modProj.lsrproj[proji].projname == modProj.curproj.projname) {
   li.active
-    a(href='javascript:chg2test("#{key}")') #{Mod_Main.mapProj[key].cname}
+    a(href='javascript:chg2test("")') #{modProj.lsrproj[proji].projcname}
   -} else {
   li
-    a(href='javascript:chg2test("#{key}")') #{Mod_Main.mapProj[key].cname}
+    a(href='javascript:chg2test("")') #{modProj.lsrproj[proji].projcname}
   -}
   -}
   li

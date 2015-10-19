@@ -17,6 +17,8 @@ class Page_Main extends BasePage {
 
 
         this.addMod('user');
+        this.addMod('proj');
+
         this.addMod('topmenu');
         this.addMod('leftmenu');
         this.addMod('workspace');

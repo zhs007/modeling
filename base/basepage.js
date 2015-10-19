@@ -2,10 +2,10 @@
  * Created by zhs007 on 15/10/15.
  */
 
+// 使用了ES6特性
+
 var RequestInfo = require('./requestinfo').RequestInfo;
 var mgrMod = require('./modmgr').mgrMod;
-
-// 使用了ES6特性
 
 // 页面基类
 class BasePage {
