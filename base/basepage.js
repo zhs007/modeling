@@ -5,8 +5,23 @@
 var RequestInfo = require('./requestinfo').RequestInfo;
 var mgrMod = require('./modmgr').mgrMod;
 
+// 使用了ES6特性
+
+// 页面基类
 class BasePage {
 
+    //--------------------------------------------
+    // 属性
+
+    // jadefile -   jade模块文件
+    // lstMod   -   模块队列
+    // pagename -   页面名
+
+
+    //--------------------------------------------
+    // 接口
+
+    // 构造函数
     constructor(jadefile, pagename) {
         this.jadefile = jadefile;
 
@@ -18,6 +33,7 @@ class BasePage {
         //this.renderparam = {};
     }
 
+    // 增加模块，传入模块名，这个模块应该是先初始化过的，否则会出错
     addMod(modname) {
         let mod = mgrMod.mapMod[modname];
         let last = this.lstMod.findIndex(function (val, index, arr) {
@@ -29,6 +45,7 @@ class BasePage {
         }
     }
 
+    // 移除模块
     removeMod(modname) {
         var index = this.lstMod.findIndex(function (val, index, arr) {
             return val.modname == modname;
@@ -39,6 +56,8 @@ class BasePage {
         }
     }
 
+    // 处理请求，会调用模块的onRequest接口
+    // 如果某一个模块onRequest返回true，则中断直接返回true
     onRequest(ri) {
         for (let i = 0; i < this.lstMod.length; ++i) {
             if (this.lstMod[i].onRequest(ri)) {
@@ -54,6 +73,7 @@ class BasePage {
         return false;
     }
 
+    // 路由调用接口，框架用
     onRoute(req, res) {
         let ri = new RequestInfo(req, res);
 

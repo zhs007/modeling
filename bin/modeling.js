@@ -2,8 +2,10 @@
  * Created by zhs007 on 15/7/31.
  */
 
+// 启动脚本
+
 var config = require('../config');
-var debug = require('debug')(config.appname);
+//var debug = require('debug')(config.appname);
 var app = require('../app');
 var util = require('util');
 var log = require('../base/logger');
